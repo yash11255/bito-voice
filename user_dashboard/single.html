@@ -50,8 +50,8 @@
         <header class="d-flex space-between flex-center flex-middle">
             <div class="nav-links d-flex flex-center flex-middle">
                 <a href="/">
-                    <h2 class="logo logo-text white-color f-s-28 m-r-25">BITO VOICE</h2>
-                    <h2 class="second-logo-text white-color f-s-28">B-V</h2>
+                    <!-- <h2 class="logo logo-text white-color f-s-28 m-r-25">BITO VOICE</h2>
+                    <h2 class="second-logo-text white-color f-s-28">B-V</h2> -->
                 </a>
                 
             </div>
@@ -88,8 +88,16 @@
                 <span class="timeduration">2m 41s</span>
             </div>
             <div class="description">
-                बिहारी अस्मिता का शंखनाद !
+                बिहारी अस्मिता का शंखनाद ! 
+                    
+                   
+                 <a href="#" class="link-item">
+                    <i class="fa fa-share" style="margin-left: 15px;"></i>
+                    Share
+                </a>
             </div>
+            
+          
             <div class="castinformation">
                 <p><span class="name"> BITO Voice का बहुप्रतीक्षित प्रोमो वीडियो रिलीज़! 🌟
 
@@ -263,7 +271,7 @@
 
         <!-- Footer section -->
         <footer class="mainfooter d-flex direction-column space-between" id=" footer">
-            <div class="container footer-container flex-start">
+            <!-- <div class="container footer-container flex-start">
                 <div class="widgets d-flex space-between">
                     <div class="first-widget">
                         <ul>
@@ -285,14 +293,60 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="copyright container">
                 <span>&copy; 2024 Bito VOICE, Inc.</span>
             </div>
         </footer>
     </main>
+    ><style>
+        header {
+    background: none; /* Transparent background */
+    position: absolute; /* Makes the header overlap the content */
+    top: 0; /* Positions the header at the top of the viewport */
+    width: 100%; /* Ensures the header spans the full width */
+    z-index: 1000; /* Places the header above other elements */
+    color: white; /* Sets text and logos to white for visibility */
+    padding: 10px 20px; /* Optional padding for spacing */
+}
+
+header .logo, 
+header .second-logo-text, 
+header .nav-links a, 
+header .righticons img {
+    color: white; /* Ensures text and logos are visible */
+}
+
+header a:hover {
+    opacity: 0.8; /* Optional hover effect for links */
+}
+
+
+    </style>
 
     <!-- Scripts -->
+    <script>
+        // Check if the browser supports the Web Share API
+const shareLink = document.getElementById('shareLink');
+
+shareLink.addEventListener('click', function (e) {
+    e.preventDefault(); // Prevent the default link behavior
+
+    if (navigator.share) {
+        // If the browser supports the Web Share API, trigger the share dialog
+        navigator.share({
+            title: 'BITO VOICE', // Optional: Title to be shared
+            text: 'Check out BITO VOICE!', // Optional: Text to be shared
+            url: window.location.href // URL of the page to share
+        })
+        .then(() => console.log('Shared successfully'))
+        .catch((error) => console.log('Error sharing:', error));
+    } else {
+        // Fallback if Web Share API is not supported
+        alert('Sharing is not supported in this browser.');
+    }
+});
+    </script>
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/jquery.nicescroll.min.js"></script>
     <script src="../assets/js/main.js"></script>
